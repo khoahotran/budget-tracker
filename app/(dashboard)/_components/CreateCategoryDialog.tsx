@@ -2,14 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { FormField, FormItem, FormLabel, FormControl, FormDescription } from "@/components/ui/form";
+import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { TransactionType } from "@/lib/types"; 
 import { cn } from "@/lib/utils";
 import { CreateCategorySchema, CreateCategorySchemaType } from "@/schema/categories";
 import { CircleOff, Loader2, PlusSquare } from "lucide-react";
-import React, { useCallback, useState } from "react"; 
-import { Form, useForm } from "react-hook-form";
+import React, { ReactNode, useCallback, useState } from "react"; 
+import { useForm } from "react-hook-form";
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data"
@@ -24,8 +24,9 @@ import { useTheme } from "next-themes";
 interface Props { 
     type: TransactionType; 
     successCallback: (category: Category) => void;
+    trigger?: ReactNode;
 } 
-function CreateCategoryDialog({ type, successCallback } : Props) { 
+function CreateCategoryDialog({ type, successCallback, trigger } : Props) { 
     const [open, setOpen] = useState (false); 
     
     const form = useForm<CreateCategorySchemaType>({ 
@@ -79,6 +80,7 @@ function CreateCategoryDialog({ type, successCallback } : Props) {
     return ( 
         <Dialog open={open} onOpenChange={setOpen}> 
             <DialogTrigger asChild> 
+                {trigger ? trigger : (
                 <Button 
                     variant={"ghost"} 
                     className="flex border-separate items-center 
@@ -88,6 +90,7 @@ function CreateCategoryDialog({ type, successCallback } : Props) {
                     <PlusSquare className="mr-2 h-4 w-4" /> 
                     Create new 
                 </Button> 
+                )}
             </DialogTrigger>
             <DialogContent> 
                 <DialogHeader> 

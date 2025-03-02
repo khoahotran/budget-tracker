@@ -103,7 +103,7 @@ function StatCard({
                 end={value} 
                 decimals={2} 
                 formattingFn={formatFn} 
-                className="text-2x1" 
+                className="text-2xl" 
             /> 
         </div> 
     </Card> 

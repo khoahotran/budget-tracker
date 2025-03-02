@@ -64,7 +64,7 @@ function CategoriesCard({
         <Card className="h-80 w-full col-span-6"> 
             <CardHeader> 
                 <CardTitle className="grid grid-flow-row justify-between gap-2 text-muted-foreground md:grid-flow-col">
-                    {type === 'income' ? "Income" : "Expense"} by catrgory
+                    {type === 'income' ? "Income" : "Expense"} by category
                 </CardTitle> 
             </CardHeader> 
             <div className="flex items-center justify-between gap-2"> 
