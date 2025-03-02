@@ -19,8 +19,7 @@ function page() {
     <> 
     {/* HEADER */} 
         <div className="border-b bg-card"> 
-            <div className="container flex flex-wrap items-center 
-            justify-between gap-6 py-8"> 
+            <div className="container lg:max-w-full flex flex-wrap px-12 items-center justify-between gap-6 py-8"> 
                 <div> 
                     <p className="text-3xl font-bold">Manage</p> 
                     <p className="text-muted-foreground"> 
@@ -30,7 +29,7 @@ function page() {
             </div> 
         </div> 
     {/* END HEADER */} 
-        <div className="container flex flex-col gap-4 p-4"> 
+        <div className="container lg:max-w-full flex flex-col gap-6 p-4 px-20"> 
             <Card> 
                 <CardHeader> 
                     <CardTitle>Currency</CardTitle> 

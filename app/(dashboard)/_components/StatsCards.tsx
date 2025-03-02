@@ -31,7 +31,7 @@ function StatsCards({ from, to, userSettings}: Props) {
     const balance = income - expense; 
 
     return ( 
-        <div className="relative flex w-full flex-wrap gap-2 md:flex-nowrap"> 
+        <div className="relative flex w-full flex-wrap gap-2 2xl:gap-28 md:flex-nowrap"> 
             <SkeletonWrapper isLoading={statsQuery.isFetching}> 
                 <StatCard 
                     formatter={formatter}

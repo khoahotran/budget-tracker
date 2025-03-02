@@ -14,8 +14,8 @@ function TransactionPage() {
     })
   return (
     <>
-    <div className="border-b bd-card"> 
-        <div className="container flex flex-wrap items-center justify-between gap-6 py-8"> 
+    <div className="border-b bg-card"> 
+        <div className="container px-12 lg:max-w-full flex flex-wrap items-center justify-between gap-6 py-8"> 
             <div> 
                 <p className="text-3xl font-bold"> 
                     Transactions history 
@@ -41,7 +41,7 @@ function TransactionPage() {
             />
         </div> 
     </div>
-    <div className='container'>
+    <div className='container lg:max-w-full px-12 py-4'>
         <TransactionTable from={dateRange.from} to={dateRange.to} />
     </div>
     </>
